@@ -10,43 +10,48 @@ import jakarta.persistence.*;
 public class MetaData {
 
 	
-	@Id
-	@Column(name = "id")
-	private int id;
+	
+	
 	 
 	
 
 	@Column(name="file_name")
 	private String file_name;
 	
-	
-	
-	  public int getId() { return id; }
-	  
-	  
-	  public void setId(int id) { this.id = id; }
-	  
-	  
-	  public String getFile_name() { return file_name; }
-	  
-	  
-	  public void setFile_name(String file_name) { this.file_name = file_name; }
-	 
-	
+	@Id
+	@Column(name="ObjectID")
+	private int objectID;
+
 	
 
-	public MetaData(int id, String file_name) {
-		this.id = id;
+	public String getFile_name() {
+		return file_name;
+	}
+
+	public void setFile_name(String file_name) {
 		this.file_name = file_name;
 	}
 
+	public int getObjectID() {
+		return objectID;
+	}
+
+	public void setObjectID(int objectID) {
+		this.objectID = objectID;
+	}
+
+
+	public MetaData( String file_name, int objectID) {
+		
+		this.file_name = file_name;
+		this.objectID = objectID;
+	}
 
 	@Override
 	public String toString() {
-		return "MetaData [id=" + id + ", file_name=" + file_name + "]";
+		return "MetaData{" +
+				"file_name='" + file_name + '\'' +
+				", objectID=" + objectID +
+				'}';
 	}
-
-	
-	
-	
 }
